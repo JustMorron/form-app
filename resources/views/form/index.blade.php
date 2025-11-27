@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Formulir Pendaftaran </title>
+</head>
+
+<body>
+    <h1>Form Pendaftaran Kontak</h1>
+    @if (session('success'))
+        <p style="color: green;">{{ session('success') }}</p>
+    @endif
+
+    <div class="container p-2 m-5 y-2 w-50">
+        <form action="/form" method="POST">
+            @csrf
+
+            <label>Nama:</label><br>
+            <input type="text" name="nama">
+            <br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email">
+            <br><br>
+
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+
+    <div class="container p-2 m-5 y-2 w-50 ">
+
+        <table class="table table-bordered border-primary text-center">
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nomor Hp</th>
+            </tr>
+            <tr>
+                <td> {{ $i++ }} </td>
+                <td>Data 1</td>
+                <td>Data 2</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
