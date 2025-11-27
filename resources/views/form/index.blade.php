@@ -12,20 +12,20 @@
 
 <body>
     <h1>Form Pendaftaran Kontak</h1>
-    @if (session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
 
     <div class="container p-2 m-5 y-2 w-50">
+        @if (session('success'))
+            <p style="color: green;">{{ session('success') }}</p>
+        @endif
         <form action="/form" method="POST">
             @csrf
 
             <label>Nama:</label><br>
-            <input type="text" name="nama">
+            <input type="text" name="nama" required>
             <br><br>
 
-            <label>Email:</label><br>
-            <input type="email" name="email">
+            <label>Nomor Hp</label><br>
+            <input type="number" name="nohp" required>
             <br><br>
 
             <button type="submit">Kirim</button>
@@ -41,7 +41,7 @@
                 <th>Nomor Hp</th>
             </tr>
             <tr>
-                <td> {{ $i++ }} </td>
+                <td> 1 </td>
                 <td>Data 1</td>
                 <td>Data 2</td>
             </tr>

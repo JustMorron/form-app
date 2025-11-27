@@ -17,9 +17,14 @@ class Form extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'nohp' => 'required',
+        ]);
+
+        return back()->with('success', 'Data berhasil dikirim!');
     }
 
     /**
