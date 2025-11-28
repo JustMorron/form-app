@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Contact;
 
 use Illuminate\Http\Request;
 
@@ -11,7 +12,9 @@ class Form extends Controller
      */
     public function index()
     {
-        return view('form.index');
+        $contacts = Contact::latest()->get();
+
+        return view('form.index', compact('contacts'));
     }
 
     /**
@@ -23,6 +26,8 @@ class Form extends Controller
             'nama' => 'required',
             'nohp' => 'required',
         ]);
+
+        Contact::create($validated);
 
         return back()->with('success', 'Data berhasil dikirim!');
     }

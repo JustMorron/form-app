@@ -25,7 +25,7 @@
             <br><br>
 
             <label>Nomor Hp</label><br>
-            <input type="number" name="nohp" required>
+            <input type="text" name="nohp" required>
             <br><br>
 
             <button type="submit">Kirim</button>
@@ -41,9 +41,13 @@
                 <th>Nomor Hp</th>
             </tr>
             <tr>
-                <td> 1 </td>
-                <td>Data 1</td>
-                <td>Data 2</td>
+                @php $no = 1; @endphp
+                @foreach ($contacts as $contact)
+                    <td> {{ $no++ }} </td>
+                    <td>{{ $contact->nama }}</td>
+                    <td>{{ $contact->nohp }}</td>
+                @endforeach
+
             </tr>
         </table>
     </div>
