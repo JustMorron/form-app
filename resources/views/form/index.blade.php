@@ -35,20 +35,31 @@
     <div class="container p-2 m-5 y-2 w-50 ">
 
         <table class="table table-bordered border-primary text-center">
-            <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Nomor Hp</th>
-            </tr>
-            <tr>
+            <thead>
+                <tr>
+
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Nomor Hp</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
                 @php $no = 1; @endphp
                 @foreach ($contacts as $contact)
-                    <td> {{ $no++ }} </td>
-                    <td>{{ $contact->nama }}</td>
-                    <td>{{ $contact->nohp }}</td>
+                    <tr>
+
+                        <td> {{ $no++ }} </td>
+                        <td>{{ $contact->nama }}</td>
+                        <td>{{ $contact->nohp }}</td>
+                        <td>
+                            <a href="">Edit</a>
+                            <a href="">Hapus</a>
+                        </td>
+                    </tr>
                 @endforeach
 
-            </tr>
+            </tbody>
         </table>
     </div>
 
