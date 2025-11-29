@@ -9,3 +9,4 @@ use App\Http\Controllers\Form;
 
 Route::get('/', [Form::class, 'index']);
 Route::post('/form', [Form::class, 'create']);
+Route::post('/edit', [Form::class, 'update']);
