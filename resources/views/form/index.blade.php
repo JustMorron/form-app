@@ -12,7 +12,7 @@
 
 <body>
     <h1>Form Pendaftaran Kontak</h1>
-
+<p>ini adalah form pendaftaran kontak</p>
     <div class="container p-2 m-5 y-2 w-50">
         @if (session('success'))
             <p style="color: green;">{{ session('success') }}</p>
